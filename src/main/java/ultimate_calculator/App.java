@@ -27,20 +27,19 @@ public class App {
     private static void createAndShowGUI() {
         System.out.println("Created GUI on EDT? "+
                 SwingUtilities.isEventDispatchThread());
-        JFrame f = new JFrame("Calculator");
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new MyPanel());
-        f.add(new MyButton());
-        f.pack();
-        f.setVisible(true);
+        JFrame mainF = new JFrame("Calculator");
+        mainF.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //f.add(new MyPanel());
+        mainF.add(new MyButton());
+        mainF.pack();
+        mainF.setSize(500, 500);
+        mainF.setVisible(true);
     }
 }
 
 class MyButton extends JButton {
     public MyButton(){
-        setText("0");
-        setBounds(10, 10, 50, 20);
-        setSize(50, 20);
+        setText("this button is too big");
     }
 }
 
@@ -51,7 +50,6 @@ class MyPanel extends JPanel {
     private int squareH = 20;
 
     public MyPanel() {
-
         setBorder(BorderFactory.createLineBorder(Color.black));
 
         addMouseListener(new MouseAdapter() {
